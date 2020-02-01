@@ -71,6 +71,10 @@ class FeedbackClient extends MonkeyFeedbackClient
             throw new Exception\RuntimeException('You must open the connection prior to reading data');
         }
 
+        if ($this->readResponse === null) {
+            return null;
+        }
+
         $ret = substr($this->readResponse, 0, $length);
         $this->readResponse = null;
 
