@@ -1,26 +1,11 @@
 <?php
-/**
- * Zend Framework (http://framework.zend.com/)
- *
- * @link       http://github.com/zendframework/zf2 for the canonical source repository
- * @copyright  Copyright (c) 2005-2014 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd New BSD License
- * @category   ZendService
- * @package    ZendService_Apple
- * @subpackage Apns
- */
 
-namespace ZendService\Apple\Apns\Response;
+declare(strict_types=1);
 
-use ZendService\Apple\Exception;
+namespace Webmonkey\Apple\Apns\Response;
 
-/**
- * Message Response
- *
- * @category   ZendService
- * @package    ZendService_Apple
- * @subpackage Apns
- */
+use Webmonkey\Apple\Exception;
+
 class Message
 {
     /**
@@ -79,11 +64,12 @@ class Message
      * @param  int     $code
      * @return Message
      */
-    public function setCode($code)
+    public function setCode(int $code) : Message
     {
-        if (($code < 0 || $code > 8) && $code != 255) {
+        if (($code < 0 || $code > 8) && $code !== 255) {
             throw new Exception\InvalidArgumentException('Code must be between 0-8 OR 255');
         }
+
         $this->code = $code;
 
         return $this;

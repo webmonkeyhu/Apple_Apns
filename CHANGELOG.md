@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 1.5.0 - TBD
+## 2.1.0 - TBD
 
 ### Added
 
@@ -11,6 +11,29 @@ All notable changes to this project will be documented in this file, in reverse 
 ### Changed
 
 - Nothing.
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- Nothing.
+
+### Fixed
+
+- Nothing.
+
+## 2.0.0 - TBD
+
+### Added
+
+- Nothing.
+
+### Changed
+
+- Drop Support 7.4 previous versions
+- Change `array_key_exists` to `isset`
 
 ### Deprecated
 

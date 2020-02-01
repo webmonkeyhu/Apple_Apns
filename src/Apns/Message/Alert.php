@@ -1,16 +1,10 @@
 <?php
-/**
- * Zend Framework (http://framework.zend.com/)
- *
- * @link      http://github.com/zendframework/zf2 for the canonical source repository
- * @copyright Copyright (c) 2005-2014 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_Service
- */
 
-namespace ZendService\Apple\Apns\Message;
+declare(strict_types=1);
 
-use ZendService\Apple\Exception;
+namespace Webmonkey\Apple\Apns\Message;
+
+use Webmonkey\Apple\Exception;
 
 /**
  * Message Alert Object

@@ -1,27 +1,13 @@
 <?php
-/**
- * Zend Framework (http://framework.zend.com/)
- *
- * @link      http://github.com/zendframework/zf2 for the canonical source repository
- * @copyright Copyright (c) 2005-2014 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_Service
- */
 
-namespace ZendServiceTest\Apple\Apns\TestAsset;
+declare(strict_types=1);
 
-use ZendService\Apple\Apns\Exception;
-use ZendService\Apple\Apns\Client\Feedback as ZfFeedbackClient;
+namespace WebmonkeyTest\Apple\Apns\TestAsset;
 
-/**
- * Feedback Client Proxy
- * This class is utilized for unit testing purposes
- *
- * @category   ZendService
- * @package    ZendService_Apple
- * @subpackage Apns
- */
-class FeedbackClient extends ZfFeedbackClient
+use Webmonkey\Apple\Apns\Exception;
+use Webmonkey\Apple\Apns\Client\Feedback as MonkeyFeedbackClient;
+
+class FeedbackClient extends MonkeyFeedbackClient
 {
     /**
      * Read Response
@@ -84,6 +70,7 @@ class FeedbackClient extends ZfFeedbackClient
         if (! $this->isConnected()) {
             throw new Exception\RuntimeException('You must open the connection prior to reading data');
         }
+
         $ret = substr($this->readResponse, 0, $length);
         $this->readResponse = null;
 
@@ -101,6 +88,11 @@ class FeedbackClient extends ZfFeedbackClient
         if (! $this->isConnected()) {
             throw new Exception\RuntimeException('You must open the connection prior to writing data');
         }
+
+        if ($this->readResponse === null) {
+            return null;
+        }
+
         $ret = $this->writeResponse;
         $this->writeResponse = null;
 

@@ -1,17 +1,11 @@
 <?php
-/**
- * Zend Framework (http://framework.zend.com/)
- *
- * @link      http://github.com/zendframework/zf2 for the canonical source repository
- * @copyright Copyright (c) 2005-2014 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_Service
- */
 
-namespace ZendService\Apple\Apns;
+declare(strict_types=1);
 
-use Zend\Json\Encoder as JsonEncoder;
-use ZendService\Apple\Exception;
+namespace Webmonkey\Apple\Apns;
+
+use Laminas\Json\Encoder as JsonEncoder;
+use Webmonkey\Apple\Exception;
 
 /**
  * APNs Message
@@ -378,7 +372,7 @@ class Message
      */
     public function setCustom(array $custom)
     {
-        if (array_key_exists('aps', $custom)) {
+        if (isset($custom['aps'])) {
             throw new Exception\RuntimeException('custom data must not contain aps key as it is reserved by apple');
         }
 

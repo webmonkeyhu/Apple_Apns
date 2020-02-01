@@ -1,16 +1,10 @@
 <?php
-/**
- * Zend Framework (http://framework.zend.com/)
- *
- * @link      http://github.com/zendframework/zf2 for the canonical source repository
- * @copyright Copyright (c) 2005-2014 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_Service
- */
 
-namespace ZendService\Apple\Apns\Response;
+declare(strict_types=1);
 
-use ZendService\Apple\Exception;
+namespace Webmonkey\Apple\Apns\Response;
+
+use Webmonkey\Apple\Exception;
 
 /**
  * Feedback Response
@@ -62,6 +56,7 @@ class Feedback
         if (! is_scalar($token)) {
             throw new Exception\InvalidArgumentException('Token must be a scalar value');
         }
+
         $this->token = $token;
 
         return $this;
@@ -98,7 +93,8 @@ class Feedback
     public function parseRawResponse($rawResponse)
     {
         $rawResponse = trim($rawResponse);
-        $token = unpack('Ntime/nlength/H*token', $rawResponse);
+        $token       = unpack('Ntime/nlength/H*token', $rawResponse);
+
         $this->setTime($token['time']);
         $this->setToken(substr($token['token'], 0, $token['length'] * 2));
 
