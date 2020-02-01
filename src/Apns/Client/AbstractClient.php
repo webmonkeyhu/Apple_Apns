@@ -1,17 +1,11 @@
 <?php
-/**
- * Zend Framework (http://framework.zend.com/)
- *
- * @link      http://github.com/zendframework/zf2 for the canonical source repository
- * @copyright Copyright (c) 2005-2014 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_Service
- */
 
-namespace ZendService\Apple\Apns\Client;
+declare(strict_types=1);
 
-use ZendService\Apple\Exception;
-use ZendService\Apple\Exception\StreamSocketClientException;
+namespace Webmonkey\Apple\Apns\Client;
+
+use Webmonkey\Apple\Exception;
+use Webmonkey\Apple\Exception\StreamSocketClientException;
 
 /**
  * Apple Push Notification Abstract Client
@@ -22,7 +16,7 @@ abstract class AbstractClient
      * APNS URI Constants
      * @var int
      */
-    const SANDBOX_URI = 0;
+    const SANDBOX_URI    = 0;
     const PRODUCTION_URI = 1;
 
     /**
@@ -53,13 +47,13 @@ abstract class AbstractClient
      * @throws Exception\InvalidArgumentException
      * @return AbstractClient
      */
-    public function open($environment, $certificate, $passPhrase = null)
+    public function open(int $environment, $certificate, $passPhrase = null)
     {
         if ($this->isConnected) {
             throw new Exception\RuntimeException('Connection has already been opened and must be closed');
         }
 
-        if (! array_key_exists($environment, $this->uris)) {
+        if (! isset($this->uris[$environment])) {
             throw new Exception\InvalidArgumentException('Environment must be one of PRODUCTION_URI or SANDBOX_URI');
         }
 
@@ -70,12 +64,14 @@ abstract class AbstractClient
         $sslOptions = [
             'local_cert' => $certificate,
         ];
+
         if ($passPhrase !== null) {
             if (! is_scalar($passPhrase)) {
                 throw new Exception\InvalidArgumentException('SSL passphrase must be a scalar');
             }
             $sslOptions['passphrase'] = $passPhrase;
         }
+
         $this->connect($this->uris[$environment], $sslOptions);
         $this->isConnected = true;
 

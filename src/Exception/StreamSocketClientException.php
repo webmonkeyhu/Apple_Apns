@@ -1,10 +1,8 @@
 <?php
-/**
- * Exception for creating stream_socket_client
- * @author Soshnikov Artem <213036@skobka.com>
- */
 
-namespace ZendService\Apple\Exception;
+declare(strict_types=1);
+
+namespace Webmonkey\Apple\Exception;
 
 use ErrorException;
 

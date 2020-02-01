@@ -1,4 +1,6 @@
-Copyright (c) 2005-2018, Zend Technologies USA, Inc.
+Copyright (c) 2005-2018, Zend Technologies USA, Inc. of Creator
+Copyright (c) 2020, Webmonkey Solutions Kft of Maintainer
+
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification,

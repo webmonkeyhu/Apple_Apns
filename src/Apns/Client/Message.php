@@ -1,28 +1,13 @@
 <?php
-/**
- * Zend Framework (http://framework.zend.com/)
- *
- * @link      http://github.com/zendframework/zf2 for the canonical source repository
- * @copyright Copyright (c) 2005-2014 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @category   ZendService
- * @package    ZendService_Apple
- * @subpackage Apns
- */
 
-namespace ZendService\Apple\Apns\Client;
+declare(strict_types=1);
 
-use ZendService\Apple\Exception;
-use ZendService\Apple\Apns\Message as ApnsMessage;
-use ZendService\Apple\Apns\Response\Message as MessageResponse;
+namespace Webmonkey\Apple\Apns\Client;
 
-/**
- * Message Client
- *
- * @category   ZendService
- * @package    ZendService_Apple
- * @subpackage Apns
- */
+use Webmonkey\Apple\Exception;
+use Webmonkey\Apple\Apns\Message as ApnsMessage;
+use Webmonkey\Apple\Apns\Response\Message as MessageResponse;
+
 class Message extends AbstractClient
 {
     /**
@@ -37,7 +22,7 @@ class Message extends AbstractClient
     /**
      * Send Message
      *
-     * @param  ApnsMessage          $message
+     * @param  ApnsMessage     $message
      * @return MessageResponse
      */
     public function send(ApnsMessage $message)

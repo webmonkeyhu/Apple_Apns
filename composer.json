@@ -1,38 +1,35 @@
 {
-    "name": "zendframework/zendservice-apple-apns",
-    "description": "OOP Zend Framework wrapper for Apple Push Notification Service",
+    "name": "webmonkeyhu/apple-apns",
+    "description": "OOP Laminas wrapper for Apple Push Notification Service",
     "license": "BSD-3-Clause",
     "keywords": [
-        "zf",
-        "zendframework",
+        "webmonkey",
+        "laminas",
         "apns",
         "push",
         "notification",
         "apple"
     ],
     "support": {
-        "issues": "https://github.com/zendframework/ZendService_Apple_Apns/issues",
-        "source": "https://github.com/zendframework/ZendService_Apple_Apns",
-        "rss": "https://github.com/zendframework/ZendService_Apple_Apns/releases.atom",
-        "chat": "https://zendframework-slack.herokuapp.com",
-        "forum": "https://discourse.zendframework.com/c/questions/components"
+        "issues": "https://github.com/webmonkey/Apple_Apns/issues",
+        "source": "https://github.com/webmonkey/Apple_Apns"
     },
     "require": {
-        "php": "^5.6 || ^7.0",
-        "zendframework/zend-json": "^2.0 || ^3.0"
+        "php": "^7.4",
+        "laminas/laminas-json": "^3.1.2"
     },
     "require-dev": {
-        "phpunit/phpunit": "^5.7.27 || ^6.5.8 || ^7.1.5",
-        "zendframework/zend-coding-standard": "~1.0.0"
+        "laminas/laminas-coding-standard": "^1.0",
+        "phpunit/phpunit": "^8.5"
     },
     "autoload": {
         "psr-4": {
-            "ZendService\\Apple\\": "src/"
+            "Webmonkey\\Apple\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ZendServiceTest\\Apple\\": "test/"
+            "WebmonkeyTest\\Apple\\": "test/"
         }
     },
     "config": {
@@ -40,8 +37,8 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.4.x-dev",
-            "dev-develop": "1.5.x-dev"
+            "dev-master": "2.0.x-dev",
+            "dev-develop": "2.1.x-dev"
         }
     }
 }

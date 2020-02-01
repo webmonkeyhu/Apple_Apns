@@ -1,25 +1,21 @@
-ZendService\Apple\Apns [![Build Status](https://travis-ci.org/zendframework/ZendService_Apple_Apns.png?branch=master)](https://travis-ci.org/zendframework/ZendService_Apple_Apns)
+Webmonkey\Apple\Apns [![Build Status](https://travis-ci.org/webmonkeyhu/Apple_Apns.png?branch=master)](https://travis-ci.org/webmonkeyhu/Apple_Apns)
 ================================
-
-> ## Repository abandoned 2019-12-05
->
-> This repository is no longer maintained.
 
 Provides support for Apple push notifications.
 
 
 ## Requirements
 
-* PHP >= 5.6
+* PHP >= 7.4
 
 ## Getting Started
 
-Install this library using [Composer](http://getcomposer.org/):
+Install this library using [Composer](http://getcomposer.org):
 
 ```bash
-$ composer require zendframework/zendservice-apple-apns
+$ composer require webmonkeyhu/apple-apns
 ```
 
 ## Documentation
 
-The documentation can be found at: http://framework.zend.com/manual/current/en/modules/zendservice.apple.apns.html
+The documentation can be found at: [Docs](docs/documentation.md)

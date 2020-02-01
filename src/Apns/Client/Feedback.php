@@ -1,17 +1,11 @@
 <?php
-/**
- * Zend Framework (http://framework.zend.com/)
- *
- * @link      http://github.com/zendframework/zf2 for the canonical source repository
- * @copyright Copyright (c) 2005-2014 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_Service
- */
 
-namespace ZendService\Apple\Apns\Client;
+declare(strict_types=1);
 
-use ZendService\Apple\Exception;
-use ZendService\Apple\Apns\Response\Feedback as FeedbackResponse;
+namespace Webmonkey\Apple\Apns\Client;
+
+use Webmonkey\Apple\Exception;
+use Webmonkey\Apple\Apns\Response\Feedback as FeedbackResponse;
 
 /**
  * Feedback Client
@@ -30,7 +24,7 @@ class Feedback extends AbstractClient
     /**
      * Get Feedback
      *
-     * @return array of ZendService\Apple\Apns\Response\Feedback
+     * @return array of Webmonkey\Apple\Apns\Response\Feedback
      */
     public function feedback()
     {
