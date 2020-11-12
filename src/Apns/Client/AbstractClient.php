@@ -91,12 +91,14 @@ abstract class AbstractClient
             throw new StreamSocketClientException($errstr, $errno, 1, $errfile, $errline);
         });
 
+        $defaultSocketTimeout = ini_get('default_socket_timeout');
+
         try {
             $this->socket = stream_socket_client(
                 $host,
                 $errno,
                 $errstr,
-                ini_get('default_socket_timeout'),
+                $defaultSocketTimeout ? (float)$defaultSocketTimeout : null,
                 STREAM_CLIENT_CONNECT,
                 stream_context_create(
                     [
@@ -124,7 +126,7 @@ abstract class AbstractClient
                 $errstr
             ));
         }
-        stream_set_blocking($this->socket, 0);
+        stream_set_blocking($this->socket, false);
         stream_set_write_buffer($this->socket, 0);
 
         return $this;
