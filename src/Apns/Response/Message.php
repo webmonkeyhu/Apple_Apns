@@ -113,7 +113,7 @@ class Message
             throw new Exception\InvalidArgumentException('Response must be a scalar value');
         }
 
-        if (strlen($rawResponse) === 0) {
+        if ($rawResponse === false || strlen($rawResponse) === 0) {
             $this->code = self::RESULT_OK;
 
             return $this;
